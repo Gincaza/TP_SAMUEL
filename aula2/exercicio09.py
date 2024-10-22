@@ -1,30 +1,34 @@
-n = int(input("digite o número de alunos da turma: "))
+n = int(input("Digite o número de alunos da turma: "))
 soma_altura = 0
 soma_idade = 0
-aluno_velho = 0
-aluno_novo = 0
-idade_min = 0
-idade_max = 120
-altura_max = 230
-altura_min = 0
-for i in range(0, n):
-    altura = int(input("digite altura do aluno em cm: "))
-    idade = int(input("digite a idade do aluno: "))
-    soma_altura = soma_altura + altura
-    soma_idade = soma_idade + idade
-    media_altura = soma_altura / n
-    media_idade = soma_idade / n
-    if idade < idade_min  or idade_min ==0 :
+idade_min = 120
+idade_max = 0
+altura_max = 0 
+altura_min = 230
+
+for i in range(n):
+    altura = int(input("Digite a altura do aluno em cm: "))
+    idade = int(input("Digite a idade do aluno: "))
+    
+    soma_altura += altura
+    soma_idade += idade
+    
+    if idade < idade_min:
         idade_min = idade
     if idade > idade_max:
         idade_max = idade
-    if altura < altura_min or altura_min == 0:
+    if altura < altura_min:
         altura_min = altura
-    if altura > idade_max:
+    if altura > altura_max:
         altura_max = altura
 
-print("media altura: ",float(media_altura))
-print(" media de idade é: ",float(media_idade))
-print(" idade mais alta,",idade_max)
-print("idade minima é: ",idade_min)
-print("altura maxima é: ",altura_max)
+# Cálculo das médias fora do loop
+media_altura = soma_altura / n
+media_idade = soma_idade / n
+
+print("Média de altura: ", float(media_altura))
+print("Média de idade: ", float(media_idade))
+print("Idade mais velha: ", idade_max)
+print("Idade mais nova: ", idade_min)
+print("Altura máxima: ", altura_max)
+print("Altura mínima: ", altura_min)
