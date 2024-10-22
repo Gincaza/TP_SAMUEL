@@ -8,14 +8,3 @@ while n > 1:
     else:
         i = i + 1
 print(fatores)
-
-
-
-
-
-
-
-
-
-
-

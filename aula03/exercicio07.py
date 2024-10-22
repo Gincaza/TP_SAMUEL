@@ -1,6 +1,7 @@
 i = 0
 idade_nova = 999
 nome_nova = ""
+
 while i <= 999:
     numcartão = int(input("digite seu número de cartão: "))
     nome = (input("digite seu nome: "))
@@ -10,7 +11,8 @@ while i <= 999:
     if idade < idade_nova:
         idade_nova = idade
         nome_nova = nome
-print(" o nome mais novo é",nome_nova, " idade é:",idade_nova )
+
+print("O nome mais novo é", nome_nova, " idade é:", idade_nova)
 
 
 
