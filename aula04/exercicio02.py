@@ -1,11 +1,11 @@
 lista_n = []
-numero_elementos = int(input("digite número de elementos da lista: "))
-for i in range(0,numero_elementos):
-    valor = int(input("digite um número: "))
+numero_elementos = int(input("Digite o número de elementos da lista: "))
+for i in range(numero_elementos):
+    valor = int(input("Digite um número: "))
     lista_n.append(valor)
-print(lista_n.sort())
+
+# Ordenar a lista
+lista_n.sort()
+
+# Imprimir a lista já ordenada
 print(lista_n)
-
-
-
-
