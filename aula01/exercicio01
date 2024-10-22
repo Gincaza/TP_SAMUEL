@@ -1,0 +1,16 @@
+a - 101 em decimal vale 5
+
+b - 1101 em decimal vale 13
+
+c - 120 não é válido em escala binária
+
+d- 120 fica 1111000 fazendo a conversão
+
+e -1 decimal é 1 em binário
+
+f -255 fica 1 1 1 1 1 1 1 1
+
+g -1 0 0 1 + 0 0 1 = 1010
+
+h -0000100111011101 = possui 16 bits e, portanto, 2 bytes, pois 1 byte possui 8 bits
+

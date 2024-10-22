@@ -1,0 +1,35 @@
+Entrada: mtm, port, ing, geog, media
+
+inicio
+
+      escreva(" nota de mtm: " )
+
+      leia(mtm)
+
+      escreva ("nota port: " )
+
+      leia(port)
+
+      escreva(" nota de ing: " )
+
+      leia(ing)
+
+      escreva( " nota de geog: ")
+
+      leia(geog)
+
+      media <- (mtm + port + ing + geog)/ 4
+
+      escreva( " sua média foi de: ", media)
+
+      se(media >= 9,5) entao
+
+         escreval("você foi aprovado")
+
+      senao
+
+           escreval("você foi reprovado")
+
+      Fimse
+
+Fimalgoritmo

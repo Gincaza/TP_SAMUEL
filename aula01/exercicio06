@@ -1,0 +1,46 @@
+Algoritmo "MelhorAlunoEMedia"
+Var
+   nome, melhorAluno:
+   nota, melhorNota, somaNotas, media
+   contador
+
+Inicio
+   // Inicializa as variáveis
+   melhorNota := 0
+   somaNotas := 0
+   contador := 0
+
+   // Loop para ler os dados dos alunos
+   enquanto verdadeiro faca
+      escreva("Digite o nome do aluno (ou 'STOP' para terminar): ")
+      leia(nome)
+
+      // Verifica se o nome é "STOP" para encerrar o loop
+      se nome = "STOP" entao
+         interrompa
+      fimse
+
+      escreva("Digite a nota de programação de ", nome, ": ")
+      leia(nota)
+
+      // Atualiza a soma das notas e o contador de alunos
+      somaNotas := somaNotas + nota
+      contador := contador + 1
+
+      // Verifica se a nota atual é a melhor nota
+      se nota > melhorNota entao
+         melhorNota := nota
+         melhorAluno := nome
+      fimse
+   fimenquanto
+
+   // Calcula a média das notas
+   se contador > 0 entao
+      media := somaNotas / contador
+      escreva("O aluno melhor classificado é ", melhorAluno, " com a nota ", melhorNota, ".")
+      escreva("A média das notas da turma é ", media, ".")
+   senao
+      escreva("Nenhuma nota foi inserida.")
+   fimse
+Fimalgoritmo
+

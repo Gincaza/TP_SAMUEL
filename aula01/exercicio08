@@ -1,0 +1,45 @@
+: Algoritmo "PesquisaSequencialFuncao"
+Var
+   vetor: vetor[1..100] de inteiro #armazenar elementos
+   valor, i, n: inteiro  #valor a ser pesquisado /  n é o tamanho do vetor / i = valor para iteração
+   encontrado: logico # indicar se o valor foi encontrado variável lógica
+
+// Função para realizar a pesquisa sequencial # receber o valor, tamanho e valor a ser pesquisado
+funcao PesquisaSequencial(vetor: vetor de inteiro, n: inteiro, valor: inteiro): logico
+var
+   i: inteiro
+inicio
+   para i de 1 ate n faca
+      se vetor[i] = valor entao
+         retorne verdadeiro
+      fimse
+   fimpara
+   retorne falso
+fimfuncao
+
+Inicio
+   // Leitura do tamanho do vetor
+   escreva("Digite o tamanho do vetor: ")
+   leia(n)
+
+   // Leitura dos elementos do vetor
+   para i de 1 ate n faca
+      escreva("Digite o elemento ", i, ": ")
+      leia(vetor[i])
+   fimpara
+
+   // Leitura do valor a ser pesquisado
+   escreva("Digite o valor a ser pesquisado: ")
+   leia(valor)
+
+   // Chamada da função de pesquisa sequencial
+   encontrado := PesquisaSequencial(vetor, n, valor)
+
+   // Exibição do resultado
+   se encontrado entao
+      escreval("O valor ", valor, " foi encontrado no vetor.")
+   senao
+      escreval("O valor ", valor, " não foi encontrado no vetor.")
+   fimse
+Fimalgoritmo
+

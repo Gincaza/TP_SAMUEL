@@ -1,0 +1,28 @@
+algoritmo "Numero_Primo"
+
+inicio
+   // entrada
+   escreva("Escreva um número: ")
+   leia(numero)
+
+   // Verifica se o número é maior que 1
+   se numero > 1 entao
+      primo := verdadeiro
+      // Laço para verificar se o número é divisível
+      para i de 2 ate numero - 1 faca
+         se (numero % i = 0) entao
+            primo := falso
+            interrompa // Sai do laço se encontrar um divisor
+         fimse
+      fimpara
+
+      // Verifica se é primo
+      se primo entao
+         escreva(numero, " é um número primo.")
+      senao
+         escreva(numero, " não é um número primo.")
+      fimse
+   senao
+      escreva(numero, " não é um número primo.")
+   fimse
+fimalgoritmo

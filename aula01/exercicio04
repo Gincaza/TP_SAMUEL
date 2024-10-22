@@ -1,0 +1,21 @@
+Algoritmo "CalcularFatorial"
+Var
+   n, fatorial, i: inteiro
+
+Inicio
+   // Solicita ao usuário para inserir um número
+   escreva("Digite um número: ")
+   leia(n)
+
+   // Inicializa o fatorial como 1
+   fatorial := 1
+
+   // Calcula o fatorial usando um loop
+   para i de 1 ate n faca
+      fatorial := fatorial * i
+   fimpara
+
+   // Exibe o resultado
+   escreva("O fatorial de ", n, " é ", fatorial)
+Fimalgoritmo
+

@@ -1,0 +1,123 @@
+variavel
+    tabuleiro: vetor[1..6,1..7] de caractere
+    jogador_atual: caractere
+    jogando: logico
+    vencedor: caractere
+    jogadas, linha, coluna, i, j: inteiro
+
+inicio
+    // iniciar o tabuleiro 6x7 com espaços vazios
+    para i de 1 ate 6 faca
+        para j de 1 ate 7 faca
+            tabuleiro[i, j] <- ' '
+        fimpara
+    fimpara
+
+    jogador_atual <- 'X'
+    jogando <- verdadeiro
+    vencedor <- ' '
+    jogadas <- 0
+
+    // Jogo
+    enquanto jogando faca
+        // Exibe o tabuleiro
+        para i de 1 ate 6 faca
+            para j de 1 ate 7 faca
+                escreva(tabuleiro[i, j], " | ")
+            fimpara
+            escreval()
+            escreval("----------------------------")
+        fimpara
+
+        // solicitar jogada
+        escreva("Jogador ", jogador_atual, ", escolha uma coluna (1-7): ")
+        leia(coluna)
+
+        // verificar se a coluna é válida
+        se (coluna >= 1) e (coluna <= 7) e (tabuleiro[1, coluna] = ' ') entao
+            // Encontra a linha mais baixa disponível na coluna
+            para linha de 6 ate 1 passo -1 faca
+                se tabuleiro[linha, coluna] = ' ' entao
+                    tabuleiro[linha, coluna] <- jogador_atual
+                    jogadas <- jogadas + 1
+                    interrompa
+                fimse
+            fimpara
+
+            // verifica vitória (linhas)
+            para i de 1 ate 6 faca
+                para j de 1 ate 4 faca
+                    se (tabuleiro[i, j] = jogador_atual) e (tabuleiro[i, j + 1] = jogador_atual) e (tabuleiro[i, j + 2] = jogador_atual) e (tabuleiro[i, j + 3] = jogador_atual) entao
+                        vencedor <- jogador_atual
+                        jogando <- falso
+                    fimse
+                fimpara
+            fimpara
+
+            // Vverifica vitória (colunas)
+            para i de 1 ate 3 faca
+                para j de 1 ate 7 faca
+                    se (tabuleiro[i, j] = jogador_atual) e (tabuleiro[i + 1, j] = jogador_atual) e (tabuleiro[i + 2, j] = jogador_atual) e (tabuleiro[i + 3, j] = jogador_atual) entao
+                        vencedor <- jogador_atual
+                        jogando <- falso
+                    fimse
+                fimpara
+            fimpara
+
+            // verifica vitória (diagonais descendo)
+            para i de 1 ate 3 faca
+                para j de 1 ate 4 faca
+                    se (tabuleiro[i, j] = jogador_atual) e (tabuleiro[i + 1, j + 1] = jogador_atual) e (tabuleiro[i + 2, j + 2] = jogador_atual) e (tabuleiro[i + 3, j + 3] = jogador_atual) entao
+                        vencedor <- jogador_atual
+                        jogando <- falso
+                    fimse
+                fimpara
+            fimpara
+
+            // verifica vitória (diagonais subindo)
+            para i de 4 ate 6 faca
+                para j de 1 ate 4 faca
+                    se (tabuleiro[i, j] = jogador_atual) e (tabuleiro[i - 1, j + 1] = jogador_atual) e (tabuleiro[i - 2, j + 2] = jogador_atual) e (tabuleiro[i - 3, j + 3] = jogador_atual) entao
+                        vencedor <- jogador_atual
+                        jogando <- falso
+                    fimse
+                fimpara
+            fimpara
+
+            // mudar o jogador
+            se vencedor = ' ' entao
+                se jogador_atual = 'X' entao
+                    jogador_atual <- 'O'
+                senao
+                    jogador_atual <- 'X'
+                fimse
+            fimse
+
+            // verifica  empate
+            se (jogadas = 42) e (vencedor = ' ') entao
+                jogando <- falso
+            fimse
+
+        senao
+            escreval("Coluna inválida! Tente novamente.")
+        fimse
+    fimenquanto
+
+    // Exibir o tabuleiro final
+    para i de 1 ate 6 faca
+        para j de 1 ate 7 faca
+            escreva(tabuleiro[i, j], " | ")
+        fimpara
+        escreval()
+        escreval("----------------------------")
+    fimpara
+
+    // exibir o resultado
+    se vencedor <> ' ' entao
+        escreval("Parabéns! O jogador ", vencedor, " venceu!")
+    senao
+        escreval("Empate!")
+    fimse
+
+fimalgoritmo
+

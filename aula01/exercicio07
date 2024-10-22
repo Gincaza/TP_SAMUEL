@@ -1,0 +1,26 @@
+Algoritmo "MaiorAlgarismoSemFuncao"
+Var
+   numero, algarismo, maior: inteiro
+
+Inicio
+   // Leitura do número
+   escreva("Digite um número inteiro: ")
+   leia(numero)
+
+   // Inicializa a variável maior
+   maior := 0
+
+   // Loop para encontrar o maior algarismo
+   enquanto numero > 0 faca
+      algarismo := numero % 10
+      se algarismo > maior entao
+         maior := algarismo
+      fimse
+      numero := numero / 10
+   fimenquanto
+
+   // Exibição do resultado
+   escreval("O maior algarismo contido no número é: ", maior)
+Fimalgoritmo
+
+

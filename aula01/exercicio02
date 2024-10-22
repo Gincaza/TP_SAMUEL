@@ -1,0 +1,13 @@
+Entrada: xa, xb, ya, yb, distancia
+inicio
+
+  escreva("valor de xa: ")
+      leia(xa)
+      escreva("valor de xb: ")
+      leia(xb)
+      escreva(" valor de ya:")
+     leia(ya)
+   escreva(" valor de yb: ")
+    leia(yb)
+distancia <- RaizQ((xa-xb)^2 + (ya-yb)^2)
+escreva("distância entre os pontos e:", distancia)
