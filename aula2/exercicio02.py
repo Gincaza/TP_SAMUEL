@@ -18,6 +18,3 @@ else:
     x1 = (-b + d ** 0.5) / (2 * a)
     x2 = (-b - d ** 0.5) / (2 * a)
     print(f"duas raizes reais: x1 = {x1}, x2 = {x2}")
-
-
-
